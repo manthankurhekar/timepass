@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body style="background-image: linear-gradient(to right, #02AABD, #00CDAC);">
+      <div style="
+            border: 5px solid pink;
+            margin: auto;
+            width: 21%;
+            padding: 10px;
+            display: flex; justify-content: center; align-items: center;
+          ">
+            <IMG class="gif" style="height: 300px;" SRC="https://i.pinimg.com/originals/d8/b9/71/d8b97168488fdb3eb9533da493c8fa95.gif">
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+            <p  class="textArea" style="font-size: 30px; font-family: Arial";>Will you be my valentine?</p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+            <button class="yesButton" style="margin-right: 50px; height: 45px; width: 70px; border-color: pink; border-radius: 100px; background-color: lightgreen; font-size: 20px;" onclick="clickedOnYes()">YES</button>
+            <button class="noButton" style="height: 60px; width: 220px; border-color: pink; border-radius: 100px; background-color: red; font-size: 20px;" onclick="clickedOnNo()">NO</button>
+      </div>
+
+      <script>
+            const yesButton = document.querySelector('.yesButton');
+            const noButton = document.querySelector('.noButton');
+            const textArea = document.querySelector('.textArea');
+            const gif = document.querySelector('.gif');
+
+            const reasons = [ "Really sure?",
+                              "Think again!",
+                              "Last chance!",
+                              "Surely not?",
+                              "You might regret later!",
+                              "Are you absolutely certain?",
+                              "This could be a mistake!",
+                              "Have a heart!",
+                              "Don't be so cold!",
+                              "Change of heart?",
+                              "Wouldn't you reconsider?",
+                              "Is that your final answer?",
+                              "You are breaking my heart :("
+                             ];
+
+            let h = 45, w = 70, fs = 20, ptr = 0;
+            
+            const clickedOnNo = () => {
+                  h += 5, fs += 2, w += 5;;
+                  yesButton.style.height = `${h}px`;
+                  yesButton.style.fontSize = `${fs}px`;
+                  yesButton.style.width = `${w}px`;
+                  noButton.innerText = `${reasons[ptr++ % reasons.length]}`;
+            };
+
+            const clickedOnYes = () => {
+                  textArea.innerText = "WOHOOOOOOOOOOOOOOOOOO!!!!!!!!!!!";
+                  yesButton.style.display = "none";
+                  noButton.style.display = "none";
+                  gif.src = "https://preview.redd.it/koni-ebi-love-couple-rabbit-2-en-tenor-angkana-pankategrum-v0-zdfa7qcsgasa1.gif?width=512&auto=webp&s=dea6ecc27f46389e80bb9946a93a762f2bd1aa10";
+            };
+
+      </script>
+</body>
+</html>
